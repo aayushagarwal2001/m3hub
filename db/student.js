@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const blog=require('./blog');
 const Schema = mongoose.Schema;
 const passportLocalMongoose = require('passport-local-mongoose');
 mongoose.connect('mongodb://localhost/student',{
@@ -10,7 +11,10 @@ const student = new Schema({
     branch:String,
     rollNo:String,
     Email:String,
+    content:[{ type: Schema.Types.ObjectId, ref:'Blog',required:true}],
     password:String,
+    
+
 });
 
 student.plugin(passportLocalMongoose);

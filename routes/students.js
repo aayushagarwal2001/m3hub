@@ -13,7 +13,7 @@ router.post('/register', catchAsync(async (req, res,next) => {
     try {
     
         const {  username,branch,rollNo,Email,password } = req.body;
-        const user = new User({username ,branch,rollNo,Email});
+        const user = new User({username ,branch,rollNo,Email,content:[]});
         const registeredUser = await User.register(user, password);
         req.login(registeredUser, err => {
             if (err) return next(err);
@@ -36,7 +36,7 @@ router.post('/', passport.authenticate('local', { failureFlash: true, failureRed
     var sub=branch.branch;
     var redirectUrl;
     if(sub=='cse'){
-    redirectUrl = req.session.returnTo || '/computer_science';}
+    redirectUrl = req.session.returnTo || '/cse';}
     if(sub=='che'){
         redirectUrl = req.session.returnTo || '/chemical_engineering';}
         if(sub=='it'){

@@ -12,6 +12,7 @@ const User = require('./db/student');
   
 const students=require('./routes/students');
 const home=require('./routes/home');
+const blog=require('./routes/blog');
 mongoose.connect('mongodb://localhost:27017/students', {
     useNewUrlParser: true,
     useCreateIndex: true,
@@ -56,6 +57,7 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 app.use('/', students);
 app.use('/',home);
+app.use('/blog',blog);
 
 app.use((req, res, next) => {
     console.log(req.session)

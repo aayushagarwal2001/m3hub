@@ -1,6 +1,8 @@
 const express = require('express');
 const route= express.Router();
 const fetch=require('node-fetch');
+const User=require('../db/student');
+const b_post=require('../db/blog');
 /*async function getapi(url) {
     
     // Storing response
@@ -15,7 +17,7 @@ route.get('/',(req,res)=>
 {
     res.render('home/home');
 });
-route.get('/computer_science', async(req,res)=>
+route.get('/cse', async(req,res)=>
 {console.log(req.user);
     var arr=[];
     var k=['code_chef','codeforces','hacker_earth','kick_start'];
@@ -31,7 +33,18 @@ route.get('/computer_science', async(req,res)=>
       } else {
         alert("HTTP-Error: " + response.status);
       }}
-      res.render('home/home_cse',{cc:arr});
+      const blog_all=await b_post.find({}).exec();
+      const user=req.user;
+    
+      if(user)
+      { var user_id=user._id;
+      const b= await User.findById(user_id).populate('content');
+       res.render('home/home_cse',{cc:arr,blog:b,blog_all:blog_all});}
+       else{
+           const c="und";
+        res.render('home/home_cse',{cc:arr,blog_all:blog_all,blog:c});
+       }
+
 });
 route.get('/mechanical_engineering',(req,res)=>
 {
