@@ -35,7 +35,7 @@ route.get('/cse', async(req,res)=>
       }}
       const blog_all=await b_post.find({}).exec();
       const user=req.user;
-    
+    const color=['background-color:#ff9999', 'background-color:#1aa3ff','background-color:#E5CA25']
       if(user)
       { var user_id=user._id;
       const b= await User.findById(user_id).populate('content');
