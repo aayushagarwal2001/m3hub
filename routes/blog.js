@@ -25,7 +25,7 @@ route.post('/create',catchAsync(async (req, res) => {
    await a.save();
 
 
-         req.flash('success', 'Welcome to Yelp Camp!');
+         
 
 
 
