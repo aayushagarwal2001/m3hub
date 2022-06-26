@@ -40,7 +40,6 @@ app.set('views', path.join(__dirname, 'views'))
 app.use(mongoSanitize({
     replaceWith: '_'
 }))
-app.use(flash());
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
