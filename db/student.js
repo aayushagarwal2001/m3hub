@@ -2,10 +2,7 @@ const mongoose = require('mongoose');
 const blog=require('./blog');
 const Schema = mongoose.Schema;
 const passportLocalMongoose = require('passport-local-mongoose');
-mongoose.createConnection('mongodb://localhost/student',{
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+
 const student = new Schema({
     username:String,
     branch:String,
