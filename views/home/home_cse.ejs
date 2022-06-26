@@ -1,164 +1,124 @@
-<%layout('partials /boilerplate')-%>
-  <%-include('.. /partials/navbar')-%>
+<%layout('partials/boilerplate')-%>
+<%-include('../partials/navbar')-%>
 
-    <div class="container-fluid" style="margin-left: 2%; margin-top:2%; width: 90vw; ">
-      <div class="row ">
-        <div class="col-md-9 col-sm-12 row">
-          <div class="col-md-4 col-sm-4" style="margin-left:0%;height:fit-content;">
-
-            <div class="accordion" id="accordionExample">
-              <div class="accordion-item">
-                <h3 class="accordion-header"
-                  style="justify-content: center;align-items:center;display: flex;background: #232526;  /* fallback for old browsers */
+ <div class="container-fluid" style="margin-left: 2%; margin-top:2%; width: 90vw; ">
+   <div class="row ">
+    <div class="col-md-9 col-sm-12 row">
+     <div class="col-md-4 col-sm-4" style="margin-left:0%;height:fit-content;">
+       
+      <div class="accordion" id="accordionExample" >
+        <div class="accordion-item" >
+          <h3 class="accordion-header" style="justify-content: center;align-items:center;display: flex;background: #232526;  /* fallback for old browsers */
           background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
-          background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */"><button
-                    class="btn"
-                    style="font-family: 'Raleway', sans-serif; font-weight:bold;font-size: large;color:whitesmoke;">Important
-                    coding events</button></h3>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                    aria-expanded="false" aria-controls="collapseOne" style="font-family: 'Raleway', sans-serif; font-weight:bold;color:whitesmoke;background: #232526;  /* fallback for old browsers */
+          background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */"><button class="btn" style="font-family: 'Raleway', sans-serif; font-weight:bold;font-size: large;color:whitesmoke;">Important coding events</button></h3>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="font-family: 'Raleway', sans-serif; font-weight:bold;color:whitesmoke;background: #232526;  /* fallback for old browsers */
             background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
             background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
             ">
-                    codechef
-                  </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                  data-bs-parent="#accordionExample">
-                  <div class="accordion-body overflow-auto" style="height:40vh;">
-
-                    <ul class="list-group">
-                      <%cc[0].forEach(element=> { %>
-                        <li class="list-group-item"
-                          style="background-image: radial-gradient( circle 1224px at 10.6% 8.8%,  rgba(255,255,255,1) 0%, rgba(153,202,251,1) 100.2% );">
-                          <a style=" font-family: 'Fira Sans', sans-serif;text-decoration: none;color: rgb(23, 177, 201);
-                    " href=<%=element.url%> ><%= element.name %></a>
-                          <p>start time:<%=Date(element.start_time)%>
-                          </p>
-                        </li>
-                        <% }) %>
-
-                    </ul>
-
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"
-                    style="font-family: 'Raleway', sans-serif; font-weight:bold;color:whitesmoke;background: #232526;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">
-                    codeforces
-                  </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                  data-bs-parent="#accordionExample">
-                  <div class="accordion-body overflow-auto" style="height:40vh;">
-                    <ul class="list-group">
-                      <%cc[1].forEach(element=> { %>
-                        <li class="list-group-item"
-                          style="background-image: radial-gradient( circle 1224px at 10.6% 8.8%,  rgba(255,255,255,1) 0%, rgba(153,202,251,1) 100.2% );">
-                          <a style=" font-family: 'Fira Sans', sans-serif;text-decoration: none;color:rgb(23, 177, 201);
-                      " href=<%=element.url%> ><%= element.name %></a>
-                          <p>start time:<%=Date(element.start_time)%>
-                          </p>
-                        </li>
-                        <% }) %>
-
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapseTwo"
-                    style="font-family: 'Raleway', sans-serif; font-weight:bold;color:whitesmoke;background: #232526;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">
-                    Hackerearth
-                  </button>
-                </h2>
-                <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                  data-bs-parent="#accordionExample">
-                  <div class="accordion-body overflow-auto" style="height:40vh;">
-                    <ul class="list-group">
-                      <%cc[2].forEach(element=> { %>
-                        <li class="list-group-item"
-                          style="background-image: radial-gradient( circle 1224px at 10.6% 8.8%,  rgba(255,255,255,1) 0%, rgba(153,202,251,1) 100.2% );">
-                          <a style=" font-family: 'Fira Sans', sans-serif;text-decoration: none;color: rgb(23, 177, 201);
-                      " href=<%=element.url%> ><%= element.name %></a>
-                          <p>start time:<%=Date(element.start_time)%>
-                          </p>
-                        </li>
-                        <% }) %>
-
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapseTwo"
-                    style="font-family: 'Raleway', sans-serif; font-weight:bold;color:whitesmoke;background: #232526;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">
-                    Kickstart
-                  </button>
-                </h2>
-                <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                  data-bs-parent="#accordionExample">
-                  <div class="accordion-body overflow-auto" style="height:40vh;">
-                    <ul class="list-group">
-                      <%cc[3].forEach(element=> { %>
-                        <li class="list-group-item"
-                          style="background-image: radial-gradient( circle 1224px at 10.6% 8.8%,  rgba(255,255,255,1) 0%, rgba(153,202,251,1) 100.2% );">
-                          <a style=" font-family: 'Fira Sans', sans-serif;text-decoration: none;color: rgb(23, 177, 201);
-                      " href=<%=element.url%> ><%= element.name %></a>
-                          <p>start time:<%=Date(element.start_time)%>
-                          </p>
-                        </li>
-                        <% }) %>
-
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              codechef
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body overflow-auto" style="height:40vh;">
+              
+              <ul class="list-group" >
+                <%cc[0].forEach(element => { %>
+                  <li class="list-group-item" style="background-image: radial-gradient( circle 1224px at 10.6% 8.8%,  rgba(255,255,255,1) 0%, rgba(153,202,251,1) 100.2% );"><a style=" font-family: 'Fira Sans', sans-serif;text-decoration: none;color: rgb(23, 177, 201);
+                    "href=<%= element.url%> ><%= element.name %></a> <p>start time:<%=Date(element.start_time)%></p></li>
+                <% }) %>
+                
+                </ul>
+        
             </div>
-
-
           </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="font-family: 'Raleway', sans-serif; font-weight:bold;color:whitesmoke;background: #232526;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">
+              codeforces
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div class="accordion-body overflow-auto" style="height:40vh;">
+                <ul class="list-group" >
+                  <%cc[1].forEach(element => { %>
+                    <li class="list-group-item"style="background-image: radial-gradient( circle 1224px at 10.6% 8.8%,  rgba(255,255,255,1) 0%, rgba(153,202,251,1) 100.2% );"><a style=" font-family: 'Fira Sans', sans-serif;text-decoration: none;color:rgb(23, 177, 201);
+                      "href=<%= element.url%> ><%= element.name %></a> <p>start time:<%=Date(element.start_time)%></p></li>
+                  <% }) %>
+                  
+                  </ul>
+               </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapseTwo" style="font-family: 'Raleway', sans-serif; font-weight:bold;color:whitesmoke;background: #232526;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">
+              Hackerearth
+            </button>
+          </h2>
+          <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div class="accordion-body overflow-auto" style="height:40vh;">
+                <ul class="list-group" >
+                  <%cc[2].forEach(element => { %>
+                    <li class="list-group-item"style="background-image: radial-gradient( circle 1224px at 10.6% 8.8%,  rgba(255,255,255,1) 0%, rgba(153,202,251,1) 100.2% );"><a style=" font-family: 'Fira Sans', sans-serif;text-decoration: none;color: rgb(23, 177, 201);
+                      "href=<%= element.url%> ><%= element.name %></a> <p>start time:<%=Date(element.start_time)%></p></li>
+                  <% }) %>
+                  
+                  </ul>
+               </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapseTwo" style="font-family: 'Raleway', sans-serif; font-weight:bold;color:whitesmoke;background: #232526;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">
+              Kickstart
+            </button>
+          </h2>
+          <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div class="accordion-body overflow-auto" style="height:40vh;">
+                <ul class="list-group" >
+                  <%cc[3].forEach(element => { %>
+                    <li class="list-group-item"style="background-image: radial-gradient( circle 1224px at 10.6% 8.8%,  rgba(255,255,255,1) 0%, rgba(153,202,251,1) 100.2% );"><a style=" font-family: 'Fira Sans', sans-serif;text-decoration: none;color: rgb(23, 177, 201);
+                      "href=<%= element.url%> ><%= element.name %></a> <p>start time:<%=Date(element.start_time)%></p></li>
+                  <% }) %>
+                  
+                  </ul></div>
+               </div>
+          </div>
+        </div>
 
-          <div class="col-md-8  col-sm-8" style="height:fit-content;">
-
-            <div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <div style="align-items:center; justify-content: center; display:flex">
-
-                    <div class="blog_post">
-                      <div class="container_copy">
-                        <h3 class="h3_card">12 January 2019</h3>
-                        <h1 class="h1_card">
-                          <%= blog_all[0].title %>
-                        </h1>
-                        <p class="p_card">
-                          <%= blog_all[0].introduction%>
-                        </p>
-                        <a class="btn_primary" href='/blog/show/<%=blog_all[0]._id %>'>Read More</a>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-                <% for(let i=1;i<blog_all.length;i++) { %>
-                  <!--                 
+        
+      </div>
+          
+           <div class="col-md-8  col-sm-8" style="height:fit-content;" >
+          
+             <div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+    <div style="align-items:center; justify-content: center; display:flex">
+    
+      <div class="blog_post">
+        <div class="container_copy">
+          <h3 class="h3_card">12 January 2019</h3>
+          <h1 class="h1_card"><%= blog_all[0].title %> </h1>
+          <p class="p_card"><%= blog_all[0].introduction%></p>
+          <a class="btn_primary" href='/blog/show/<%=blog_all[0]._id %>'>Read More</a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+    <% for(let i=1;i<blog_all.length;i++) { %>
+      <!--                 
                       <div class="card text-dark bg-light mb-3" style="width:100%;">
                      
                         <div class="card-body" style="background-color: rgb(233, 190, 187);">
@@ -167,162 +127,143 @@
                           <a class="btn btn-success" href=" " >read</a>
                         </div>
                       </div> -->
-                  <div class="carousel-item ">
-                    <div style="align-items:center; justify-content: center; display:flex">
-
+                      <div class="carousel-item ">
+                      <div style="align-items:center; justify-content: center; display:flex">
+                      
                       <div class="blog_post">
                         <div class="container_copy">
                           <h3 class="h3_card">12 January 2019</h3>
-                          <h1 class="h1_card">
-                            <%= blog_all[i].title %>
-                          </h1>
-                          <p class="p_card">
-                            <%= blog_all[i].introduction%>
-                          </p>
+                          <h1 class="h1_card"><%= blog_all[i].title %> </h1>
+                          <p class="p_card"><%= blog_all[i].introduction%></p>
                           <a class="btn_primary" href='/blog/show/<%=blog_all[i]._id %>'>Read More</a>
                         </div>
-
+                        
+                      </div>
                       </div>
                     </div>
-                  </div>
-                  <% } %>
-
-
-              </div>
-              <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleControls"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button " data-bs-target="#carouselExampleControls"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
+                    <% } %>
+                   
+  
+  </div>
+  <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button " data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+              
             </div>
-
-          </div>
-          <div class="col-md-12 align-self-start" style="margin-top:1%;">
-            <div data-pym-src="https://www.jdoodle.com/embed/v0/2IhG?stdin=1&arg=0">
-            </div>
-
-            <!-- This script tag contains the 
-        javascript code in the written URL -->
-            <script src="https://www.jdoodle.com/assets/jdoodle-pym.min.js" type="text/javascript">
-            </script>
-          </div>
-        </div>
-
-
-        <div class="col-md-3 ">
-
-          <ul class="list-group list-group" style="margin-right: 2%;">
-            <li class="list-group-item"
-              style="background-image: radial-gradient( circle 827px at 47.3% 48%,  rgba(255,255,255,1) 0%, rgba(138,192,216,1) 90% );">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/HackerRank_logo.png" class="card-img-top"
-                alt="..." style="width:20%; height:20%">
-              <div class="card-body">
-                <h5 class="card-title">HACKERRANK</h5>
-                <p class="card-text">hackerrank is a online
-                  programming platform
-                  highly reccomended for
-                  beginners programmer</p>
-                <a href="https://www.hackerrank.com/" class="btn btn-primary">Go </a>
-              </div>
-            </li>
-            <li class="list-group-item"
-              style="background-image: radial-gradient( circle 827px at 47.3% 48%,  rgba(255,255,255,1) 0%, rgba(138,192,216,1) 90% );">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/GeeksforGeeks.svg/2560px-GeeksforGeeks.svg.png"
-                style="width:20%; height:10%" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">GEEKSFORGEEKS</h5>
-                <p class="card-text">answer to all your coding problems is here!</p>
-                <a href="https://www.geekforgeeks.com/" class="btn btn-primary">Go </a>
-              </div>
-            </li>
-            <li class="list-group-item"
-              style="background-image: radial-gradient( circle 827px at 47.3% 48%,  rgba(255,255,255,1) 0%, rgba(138,192,216,1) 90% );">
-              <img
-                src="https://media-exp1.licdn.com/dms/image/C4D0BAQHF7HLEYX6LSQ/company-logo_200_200/0/1607800000814?e=2159024400&v=beta&t=GhDf2E1ixnXHT2c4bQQE58T---2Mw86d6mi3lHAnzyA"
-                class="card-img-top" style="width:20%; height:10%" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">w3schools</h5>
-                <p class="card-text">101 of webdevlopment</p>
-                <a href="https://www.w3schools.com/" class="btn btn-primary">Go s</a>
-              </div>
-            </li>
-            <li class="list-group-item"
-              style="background-image: radial-gradient( circle 1224px at 10.6% 8.8%,  rgba(255,255,255,1) 0%, rgba(153,202,251,1) 100.2% );">
-              <img
-                src="https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/062020/codeforces_logo.png?Qlx1_zCw.Q4T7PHPosbkLyNiBJQWX7GD&itok=6wPhjh1X"
-                style="width:20%; height:10%" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">codeforces</h5>
-                <p class="card-text">coding war ground!</p>
-                <a href="https://www.codeforces.com/" class="btn btn-primary">Go</a>
-              </div>
-
-            </li>
-            <li class="list-group-item"
-              style="background-image: radial-gradient( circle 1224px at 10.6% 8.8%,  rgba(255,255,255,1) 0%, rgba(153,202,251,1) 100.2% );">
-              <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" class="card-img-top"
-                style="width:20%; height:10%" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">linkedIn</h5>
-                <p class="card-text">social media for professionals</p>
-                <a href="https://www.linkedin.com/" class="btn btn-primary">Go </a>
-              </div>
-            </li>
-          </ul>
-
-        </div>
-
-
-      </div>
-
+            <div class="col-md-12 align-self-start" style="margin-top:1%;" >
+              <div data-pym-src=
+"https://www.jdoodle.com/embed/v0/2IhG?stdin=1&arg=0">
     </div>
+  
+    <!-- This script tag contains the 
+        javascript code in the written URL -->
+    <script src=
+"https://www.jdoodle.com/assets/jdoodle-pym.min.js"
+        type="text/javascript">
+    </script>
+            </div>
+          </div>
 
+            
+              <div class="col-md-3 "  >
+                
+                         <ul class="list-group list-group" style="margin-right: 2%;">
+                  <li class="list-group-item" style="background-image: radial-gradient( circle 827px at 47.3% 48%,  rgba(255,255,255,1) 0%, rgba(138,192,216,1) 90% );" >
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/HackerRank_logo.png" class="card-img-top" alt="..." style="width:20%; height:20%">
+                      <div class="card-body" >
+                        <h5 class="card-title">HACKERRANK</h5>
+                        <p class="card-text">hackerrank is a online
+                          programming platform 
+                          highly reccomended for 
+                          beginners programmer</p>
+                        <a href="https://www.hackerrank.com/" class="btn btn-primary">Go </a>
+                      </div>
+                  </li>
+                  <li class="list-group-item" style="background-image: radial-gradient( circle 827px at 47.3% 48%,  rgba(255,255,255,1) 0%, rgba(138,192,216,1) 90% );">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/GeeksforGeeks.svg/2560px-GeeksforGeeks.svg.png"  style="width:20%; height:10%"class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">GEEKSFORGEEKS</h5>
+                        <p class="card-text">answer to all your coding problems is here!</p>
+                        <a href="https://www.geekforgeeks.com/" class="btn btn-primary">Go </a>
+                      </div>
+                  </li>
+                  <li class="list-group-item" style="background-image: radial-gradient( circle 827px at 47.3% 48%,  rgba(255,255,255,1) 0%, rgba(138,192,216,1) 90% );">
+                    <img src="https://media-exp1.licdn.com/dms/image/C4D0BAQHF7HLEYX6LSQ/company-logo_200_200/0/1607800000814?e=2159024400&v=beta&t=GhDf2E1ixnXHT2c4bQQE58T---2Mw86d6mi3lHAnzyA" class="card-img-top" style="width:20%; height:10%" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">w3schools</h5>
+                        <p class="card-text">101 of webdevlopment</p>
+                        <a href="https://www.w3schools.com/" class="btn btn-primary">Go s</a>
+                      </div>
+                  </li>
+                  <li class="list-group-item" style="background-image: radial-gradient( circle 1224px at 10.6% 8.8%,  rgba(255,255,255,1) 0%, rgba(153,202,251,1) 100.2% );"><img src="https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/062020/codeforces_logo.png?Qlx1_zCw.Q4T7PHPosbkLyNiBJQWX7GD&itok=6wPhjh1X" style="width:20%; height:10%" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">codeforces</h5>
+                      <p class="card-text">coding war ground!</p>
+                      <a href="https://www.codeforces.com/" class="btn btn-primary">Go</a>
+                    </div>
 
-
-    <footer class="w-100 py-4 flex-shrink-0" style=" background: #212529;">
-      <div class="container py-4">
-        <div class="row gy-4 gx-5">
-          <div class="col-lg-4 col-md-6">
-            <h5 class="h1 text-white">M3-HUB</h5>
-            <p class="small text-muted">Life is to learn and is about fun!</p>
-            <p class="small text-muted mb-0">&copy; Copyrights. All rights reserved.</p>
-          </div>
-          <div class="col-lg-2 col-md-6">
-            <h5 class="text-white mb-3">Quick links</h5>
-            <ul class="list-unstyled text-muted">
-              <li><a href="#" style="text-decoration:none;color:inherit">Home</a></li>
-              <li><a href="#" style="text-decoration:none;color:inherit">About</a></li>
-              <li><a href="#" style="text-decoration:none;color:inherit">Get started</a></li>
-              <li><a href="#" style="text-decoration:none;color:inherit">FAQ</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-2 col-md-6">
-            <h5 class="text-white mb-3">Quick links</h5>
-            <ul class="list-unstyled text-muted">
-              <li><a href="#" style="text-decoration:none;color:inherit">Home</a></li>
-              <li><a href="#" style="text-decoration:none;color:inherit">About</a></li>
-              <li><a href="#" style="text-decoration:none;color:inherit">Get started</a></li>
-              <li><a href="#" style="text-decoration:none;color:inherit">FAQ</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <h5 class="text-white mb-3">Newsletter</h5>
-            <p class="small text-muted">For latest updates leave your E-mail</p>
-            <form action="#">
-              <div class="input-group mb-3">
-                <input class="form-control" type="text" placeholder="Recipient's username"
-                  aria-label="Recipient's username" aria-describedby="button-addon2">
-                <button class="btn btn-primary" id="button-addon2" type="button"><i
-                    class="fas fa-paper-plane"></i></button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </footer>
+                  </li>
+                  <li class="list-group-item" style="background-image: radial-gradient( circle 1224px at 10.6% 8.8%,  rgba(255,255,255,1) 0%, rgba(153,202,251,1) 100.2% );">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" class="card-img-top"  style="width:20%; height:10%"alt="...">
+                      <div class="card-body" >
+                        <h5 class="card-title">linkedIn</h5>
+                        <p class="card-text">social media for professionals</p>
+                        <a href="https://www.linkedin.com/" class="btn btn-primary">Go </a>
+                      </div>
+                  </li>
+                </ul>
+                
+            </div>
+          
+            
+               </div>
+              
+               </div>           
+           
+   
+  
+               <footer class="w-100 py-4 flex-shrink-0" style=" background: #212529;">
+                <div class="container py-4">
+                    <div class="row gy-4 gx-5">
+                        <div class="col-lg-4 col-md-6">
+                            <h5 class="h1 text-white">M3-HUB</h5>
+                            <p class="small text-muted">Life is to learn and is about fun!</p>
+                            <p class="small text-muted mb-0">&copy; Copyrights. All rights reserved.</p>
+                        </div>
+                        <div class="col-lg-2 col-md-6">
+                            <h5 class="text-white mb-3">Quick links</h5>
+                            <ul class="list-unstyled text-muted">
+                                <li><a href="#" style="text-decoration:none;color:inherit">Home</a></li>
+                                <li><a href="#" style="text-decoration:none;color:inherit">About</a></li>
+                                <li><a href="#" style="text-decoration:none;color:inherit">Get started</a></li>
+                                <li><a href="#" style="text-decoration:none;color:inherit">FAQ</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-2 col-md-6">
+                            <h5 class="text-white mb-3">Quick links</h5>
+                            <ul class="list-unstyled text-muted">
+                                <li><a href="#" style="text-decoration:none;color:inherit">Home</a></li>
+                                <li><a href="#" style="text-decoration:none;color:inherit">About</a></li>
+                                <li><a href="#" style="text-decoration:none;color:inherit">Get started</a></li>
+                                <li><a href="#" style="text-decoration:none;color:inherit">FAQ</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <h5 class="text-white mb-3">Newsletter</h5>
+                            <p class="small text-muted">For latest updates leave your E-mail</p>
+                            <form action="#">
+                                <div class="input-group mb-3">
+                                    <input class="form-control" type="text" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                    <button class="btn btn-primary" id="button-addon2" type="button"><i class="fas fa-paper-plane"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </footer>
