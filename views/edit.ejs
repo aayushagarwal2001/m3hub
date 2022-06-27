@@ -13,25 +13,29 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.23.0/ui/trumbowyg.min.css">
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
     </head>
     <body>
+        <%-include('./partials/navbar')-%>
+        <div class="container-fluid" style="margin-left: 2%; margin-top:2%; width: 90vw; margin-bottom:2%; ">
+    
 <div class="container">
-        <form id="post_blog" method="POST" name="post_blog" action="/blog/show/<%=blog._id%>?_method=PUT">
+        <form id="post_blog" method="POST" name="post_blog" action="/blog/show/<%=blog_post._id%>?_method=PUT">
             <div class="mb-3" style="margin-top: 2%;" >
                 <label for="title" class="form-label">Title</label>   
-               <input class="form-control" name="title" type="text"  value= "<%=blog.title%>" >
+               <input class="form-control" name="title" type="text"  value= "<%=blog_post.title%>" >
            </div>
            <div class="mb-3" style="margin-top: 2%;" >
             <label for="author" class="form-label">Author</label>   
-           <input class="form-control" name="author" type="text" value="<%=blog.author%>">
+           <input class="form-control" name="author" type="text" value="<%=blog_post.author%>">
        </div>
        <div class="mb-3" style="margin-top: 2%;" >
         <label for="intoduction" class="form-label" >introduction</label>   
-       <input class="form-control" name="introduction" type="text"  value="<%=blog.introduction%>">
+       <input class="form-control" name="introduction" type="text"  value="<%=blog_post.introduction%>">
    </div>
             
         <div id='editor'>
-            <%-blog.editor%>  
+            <%-blog_post.editor%>  
         </div>
         <button class="btn btn-primary btn-lg" style="margin-top: 2%;">Publish</button>
 
@@ -48,6 +52,7 @@
             $('#editor').trumbowyg();
           
         </script>
-        
+     </div>   
+     <%-include('./partials/footer')-%>
     </body>
 </html>

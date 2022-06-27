@@ -108,7 +108,7 @@
     
       <div class="blog_post">
         <div class="container_copy">
-          <h3 class="h3_card">12 January 2019</h3>
+          <h3 class="h3_card"><%=blog_all[0].createdAt.toDateString()%></h3>
           <h1 class="h1_card"><%= blog_all[0].title %> </h1>
           <p class="p_card"><%= blog_all[0].introduction%></p>
           <a class="btn_primary" href='/blog/show/<%=blog_all[0]._id %>'>Read More</a>
@@ -132,7 +132,7 @@
                       
                       <div class="blog_post">
                         <div class="container_copy">
-                          <h3 class="h3_card">12 January 2019</h3>
+                          <h3 class="h3_card"><%=blog_all[i].createdAt.toDateString()%></h3>
                           <h1 class="h1_card"><%= blog_all[i].title %> </h1>
                           <p class="p_card"><%= blog_all[i].introduction%></p>
                           <a class="btn_primary" href='/blog/show/<%=blog_all[i]._id %>'>Read More</a>
@@ -228,42 +228,4 @@
            
    
   
-               <footer class="w-100 py-4 flex-shrink-0" style=" background: #212529;">
-                <div class="container py-4">
-                    <div class="row gy-4 gx-5">
-                        <div class="col-lg-4 col-md-6">
-                            <h5 class="h1 text-white">M3-HUB</h5>
-                            <p class="small text-muted">Life is to learn and is about fun!</p>
-                            <p class="small text-muted mb-0">&copy; Copyrights. All rights reserved.</p>
-                        </div>
-                        <div class="col-lg-2 col-md-6">
-                            <h5 class="text-white mb-3">Quick links</h5>
-                            <ul class="list-unstyled text-muted">
-                                <li><a href="#" style="text-decoration:none;color:inherit">Home</a></li>
-                                <li><a href="#" style="text-decoration:none;color:inherit">About</a></li>
-                                <li><a href="#" style="text-decoration:none;color:inherit">Get started</a></li>
-                                <li><a href="#" style="text-decoration:none;color:inherit">FAQ</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-2 col-md-6">
-                            <h5 class="text-white mb-3">Quick links</h5>
-                            <ul class="list-unstyled text-muted">
-                                <li><a href="#" style="text-decoration:none;color:inherit">Home</a></li>
-                                <li><a href="#" style="text-decoration:none;color:inherit">About</a></li>
-                                <li><a href="#" style="text-decoration:none;color:inherit">Get started</a></li>
-                                <li><a href="#" style="text-decoration:none;color:inherit">FAQ</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <h5 class="text-white mb-3">Newsletter</h5>
-                            <p class="small text-muted">For latest updates leave your E-mail</p>
-                            <form action="#">
-                                <div class="input-group mb-3">
-                                    <input class="form-control" type="text" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
-                                    <button class="btn btn-primary" id="button-addon2" type="button"><i class="fas fa-paper-plane"></i></button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+               <%-include('../partials/footer')-%>
