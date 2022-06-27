@@ -1,6 +1,12 @@
+
 <%layout('partials/boilerplate')-%> 
+<style>
+    body{
+     background: whitesmoke !important;
+    }
+</style>
 <%-include('partials/nav')-%>
-<div class="container" style="margin-top:3%; background-color:rgb(243, 237, 237); border: solid thin black ;">
+<div class="container" style="margin-top:3%; background-color:rgb(243, 237, 237); border: solid thin black ; margin-bottom: 2%;">
     <div class="row"> 
         <div class="col"> 
           <form method="POST" name="register" action="/register">
@@ -41,3 +47,4 @@
         </div>
     </div>
     </div>
+    <%-include('partials/footer')-%>
